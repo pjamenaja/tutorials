@@ -1,0 +1,28 @@
+﻿<Window x:Class="QRGenerator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QRGenerator"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="QR Generator" Height="450" Width="1000">
+    
+    <DockPanel LastChildFill="True">
+        <StackPanel DockPanel.Dock="Right" Width="300" Orientation="Vertical" Margin="10">
+            <Label Name="lblAccount" Content="PromptPay ID" HorizontalContentAlignment="Left" FontWeight="Bold"/>
+            <TextBox Name="txtPromptPayID" Height="30" Margin="5,0,0,0" VerticalContentAlignment="Center"/>
+            
+            <Label Name="lblAmount" Content="Amount" HorizontalContentAlignment="Left" FontWeight="Bold"/>
+            <TextBox Name="txtAmount" Height="30" Width="150" Margin="5,0,0,0" HorizontalAlignment="Left" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+
+            <Button Margin="5,10,0,0" Height="30" Content="Generate" Click="Button_Click"/>
+        </StackPanel>
+
+        <local:QRPromptPayGenerator x:Name="uctlQRGenerator" DockPanel.Dock="Left" Margin="10,10,0,10"
+                        PropmtPayID="{Binding ElementName=txtPromptPayID, Path=Text}"
+                        Amount="{Binding ElementName=txtAmount, Path=Text}">
+
+        </local:QRPromptPayGenerator>
+    </DockPanel>
+</Window>
