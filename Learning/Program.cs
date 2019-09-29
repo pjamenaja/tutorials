@@ -13,12 +13,11 @@ namespace Learning
                return;
             }
             
-            string cmd = args[0];
-            string param = args[1];      
-
-            if (cmd.Equals("echo"))
+            string command = args[0];
+            string command2 = args[1];
+            if(command.Equals("echo"))
             {
-                ArgumentLab lab01 = new ArgumentLab(param);
+                ArgumentLab L1 = new ArgumentLab(command2);
             }
         }
     }
