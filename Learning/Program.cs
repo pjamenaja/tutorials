@@ -1,5 +1,6 @@
 ﻿using System;
 using Aut.Lab.Argument;
+using Aut.Lab.SumArray;
 
 namespace Learning
 {
@@ -17,8 +18,20 @@ namespace Learning
             string command2 = args[1];
             if(command.Equals("echo"))
             {
-                ArgumentLab L1 = new ArgumentLab(command2);
+                ArgumentLab echoCmd = new ArgumentLab(command2);
             }
+            else if (command.Equals("sum"))
+            {
+                SumArray sumCmd = new SumArray(command2);
+                //sumCmd.ForLoopSum();
+                sumCmd.WhileLoopSum();
+                sumCmd.Display();
+            }           
+            
+            
+             
+             
+
         }
     }
 }
