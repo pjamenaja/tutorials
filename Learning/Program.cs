@@ -24,14 +24,10 @@ namespace Learning
             {
                 SumArray sumCmd = new SumArray(command2);
                 //sumCmd.ForLoopSum();
-                sumCmd.WhileLoopSum();
+                //sumCmd.WhileLoopSum();
+                sumCmd.Sum(3);
                 sumCmd.Display();
-            }           
-            
-            
-             
-             
-
+            }
         }
     }
 }
