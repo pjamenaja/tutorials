@@ -1,6 +1,8 @@
 ﻿using System;
 using Aut.Lab.Argument;
 using Aut.Lab.SumArray;
+using Aut.Lab.Lab03;
+
 
 namespace Learning
 {
@@ -23,11 +25,18 @@ namespace Learning
             else if (command.Equals("sum"))
             {
                 SumArray sumCmd = new SumArray(command2);
+                
                 //sumCmd.ForLoopSum();
                 //sumCmd.WhileLoopSum();
                 sumCmd.Sum(3);
                 sumCmd.Display();
+
             }
+            else if (command.Equals("lab03"))
+            {
+                ReplyApplication Rep = new ReplyApplication(command2);
+                Rep.Run(); 
+            }            
         }
     }
 }
