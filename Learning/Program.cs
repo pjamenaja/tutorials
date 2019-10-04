@@ -34,7 +34,7 @@ namespace Learning
             }
             else if (command.Equals("lab03"))
             {
-                ReplyApplication Rep = new ReplyApplication(command2);
+                ReplApplication Rep = new ReplApplication(command2);
                 Rep.Run(); 
             }            
         }

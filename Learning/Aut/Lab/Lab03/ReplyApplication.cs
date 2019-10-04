@@ -5,14 +5,14 @@ using System.Collections;
 
 namespace Aut.Lab.Lab03
 {
-    public class ReplyApplication
+    public class ReplApplication
     {
         ArrayList arrs = new ArrayList();
 
-        public ReplyApplication(string mes)
+        public ReplApplication(string mes)
         {
             string[] fields = mes.Split(',');
-            Loop(fields);
+            AddArray(fields);
         }
 
         public void Run()
@@ -20,8 +20,8 @@ namespace Aut.Lab.Lab03
             string cmd = "";
             while(!cmd.Equals("quit"))
             {
-                Console.Write("Please enter command : ");
-                string s = Console.ReadLine();
+                Console.Write("Please enter command : ");              
+                string s = Console.ReadLine();                        
                 string[] prms = s.Split(' ');
                 cmd = prms[0];
 
@@ -39,16 +39,23 @@ namespace Aut.Lab.Lab03
                     {
                         Console.WriteLine("show data in Arrays : " + field);
                     }                 
-                }
+                }         
                 else if(cmd.Equals("add"))
-                {  
-                    string list = prms[1];   
-                    string[]ad = list.Split(',');  
-                    Loop(ad);
-                }
+                {                      
+                    if(prms.Length == 1)
+                    {                        
+                        Console.Write("");
+                    }                  
+                    else 
+                    {
+                        string list = prms[1];           
+                        string[]ad = list.Split(',');  
+                        AddArray(ad); 
+                    }                                      
+                }                           
             }            
         }
-        public void Loop(string[] ind)
+        private void AddArray(string[] ind)
         {
             foreach(string ad in ind)
             {
