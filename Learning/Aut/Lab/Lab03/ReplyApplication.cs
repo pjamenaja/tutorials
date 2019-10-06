@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 
 
-
 namespace Aut.Lab.Lab03
 {
     public class ReplApplication
@@ -44,7 +43,7 @@ namespace Aut.Lab.Lab03
                 {                      
                     if(prms.Length == 1)
                     {                        
-                        Console.Write("");
+                        Console.Write("Please enter value to be added to ArrayList : ");
                     }                  
                     else 
                     {

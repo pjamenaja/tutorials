@@ -2,6 +2,7 @@
 using Aut.Lab.Argument;
 using Aut.Lab.SumArray;
 using Aut.Lab.Lab03;
+using Aut.Lab.Lab04;
 
 
 namespace Learning
@@ -26,8 +27,8 @@ namespace Learning
             {
                 SumArray sumCmd = new SumArray(command2);
                 
-                //sumCmd.ForLoopSum();
-                //sumCmd.WhileLoopSum();
+                sumCmd.ForLoopSum();
+                sumCmd.WhileLoopSum();
                 sumCmd.Sum(3);
                 sumCmd.Display();
 
@@ -36,6 +37,11 @@ namespace Learning
             {
                 ReplApplication Rep = new ReplApplication(command2);
                 Rep.Run(); 
+            }
+            else if (command.Equals("lab04"))
+            {
+                Lab04Application ha = new Lab04Application(command2);
+                ha.Run();
             }            
         }
     }
