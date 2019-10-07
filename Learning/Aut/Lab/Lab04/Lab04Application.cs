@@ -9,17 +9,9 @@ namespace Aut.Lab.Lab04
         Hashtable namehash = new Hashtable();
         
         public Lab04Application(string data)
-        {
-                   
+        {                  
             string[] vocab = data.Split(',');
-            foreach(string ele in vocab)
-            {
-                string[] divide = ele.Split('=');
-                string key = divide[0];
-                string value = divide[1];
-                namehash.Add(key,value);
-            }
-                      
+            Loopforeach(vocab);                      
         }
         public void Run()
         {
@@ -51,32 +43,53 @@ namespace Aut.Lab.Lab04
                     }                  
                 }
                 else if(cmd.Equals("add"))
-                {
-                    string nameadd = ad[1];
-                    string[] addname = nameadd.Split('=');
-                    string key = addname[0];
-                    string value = addname[1];
-                    namehash.Add(key,value);
-                    
+                {                                     
+                    if(ad.Length == 1)
+                    {
+                        Console.WriteLine("Please put Key and Value");
+                    }
+                    else
+                    {
+                        additem(ad);
+                    }                                      
                 }
                 else if(cmd.Equals("find"))
                 {
-                    string search = ad[1];
-                    foreach(DictionaryEntry find in namehash)
+                    string find = ad[1];                   
+                    if(namehash.ContainsKey(find))
+                    {                      
+                        Console.WriteLine("Show value Of this key : {0}",namehash[find]);
+                    }                   
+                    else
                     {
-                        if(namehash.ContainsKey(search))
-                        {
-                            Console.WriteLine("Show value of this word : {0}",find.Value);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Not found !!");
-                        }
+                        Console.WriteLine("Not found !!");
                     }
                 }
-
-            }
-
+                else if(cmd.Equals("remove"))
+                {
+                    string rem = ad[1];
+                    namehash.Remove(rem);
+                    Console.WriteLine("You have deleted ");
+                }
+            }          
+        }
+        private void Loopforeach(string[] cd)
+        {
+           foreach(string ele in cd)
+            {
+                string[] divide = ele.Split('=');
+                string key = divide[0];
+                string value = divide[1];
+                namehash.Add(key,value);
+            }                 
+        }
+        private void additem(string[] ad)
+        {
+            string nameadd = ad[1];
+            string[] addname = nameadd.Split('=');
+            string key = addname[0];
+            string value = addname[1];
+            namehash.Add(key,value);
         } 
 
 
