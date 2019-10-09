@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections;
+
 namespace Aut.Lab.Lab05
 {
     public class Lab05Application
@@ -43,25 +44,22 @@ namespace Aut.Lab.Lab05
                     string key = name[1];
                     if(data.ContainsKey(key))
                     {
-                        Console.WriteLine("Show value of this Key : {0}",data[key]);
+                        Vocab vocab = (Vocab) data[key];
+                        Console.WriteLine("Show value of this Key : {0}",vocab.wordvalue);
                     }
                     else
                     {
                         Console.WriteLine("Not found this key !!!");
                     }
-                }
-                
-                                
+                }                                              
             }
         }
         private void Loopforeach(string[] li)
         {
-            foreach(string file in li)
+            foreach (string line in li)
             {
-            string[] split = file.Split("|");
-            string key = split[0];
-            string Value = split[2];
-            data.Add(key,Value);                                            
+                Vocab vocab = new Vocab(line);
+                data.Add(vocab.name,vocab);               
             }
         }
 
