@@ -4,6 +4,7 @@ using Aut.Lab.SumArray;
 using Aut.Lab.Lab03;
 using Aut.Lab.Lab04;
 using Aut.Lab.Lab05;
+using Aut.Lab.lab06;
 
 
 namespace Learning
@@ -48,6 +49,11 @@ namespace Learning
             {
                 Lab05Application read = new Lab05Application(command2);
                 read.Run();
+            }
+            else if (command.Equals("lab06"))
+            {              
+                Lab06Application L6 = new Lab06Application(command2);
+                L6.Run();
             }            
         }
     }
