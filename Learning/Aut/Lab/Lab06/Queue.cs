@@ -6,14 +6,19 @@ namespace Aut.Lab.lab06
     public class Queue
     {    
         private ArrayList arr = new ArrayList();
-        public int Count{get;set;}
-                    
+        public int Count
+        {
+            get
+            {
+                return(arr.Count);
+            }            
+        }
+         
         public void Enqueue(string data)
         {           
             if(!arr.Contains(data))
             {
-                arr.Add(data);
-                
+                arr.Add(data);               
             }
             else
             {
@@ -22,15 +27,15 @@ namespace Aut.Lab.lab06
         }        
 
         public string Dequeue()
-        {
+        {                      
             string item = arr[0].ToString();
-            arr.Remove(item);
+            arr.Remove(item);           
             if(arr.Count == 0)
             {
-                Console.WriteLine("No index in Array !!");
+                Console.WriteLine("No index in Array !!");                
             }
-            return(item);          
-            
+            return(item);  
+                             
         }
         public void Clear()
         {

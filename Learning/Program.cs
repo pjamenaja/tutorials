@@ -16,7 +16,7 @@ namespace Learning
             if (args.Length <= 1)
             {
                Console.WriteLine("Please enter sub-command");
-               return;
+               return;                        
             }
             
             string command = args[0];
@@ -53,7 +53,9 @@ namespace Learning
             else if (command.Equals("lab06"))
             {              
                 Lab06Application L6 = new Lab06Application(command2);
-                L6.Run();
+                L6.Run(); 
+                
+                                      
             }            
         }
     }
