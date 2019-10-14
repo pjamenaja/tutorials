@@ -28,12 +28,14 @@ namespace Aut.Lab.lab06
 
         public string Dequeue()
         {                      
-            string item = arr[0].ToString();
-            arr.Remove(item);           
+
             if(arr.Count == 0)
             {
-                Console.WriteLine("No index in Array !!");                
+                Console.WriteLine("No index in Array !!");
+                return "";               
             }
+            string item = arr[0].ToString();
+            arr.Remove(item); 
             return(item);  
                              
         }

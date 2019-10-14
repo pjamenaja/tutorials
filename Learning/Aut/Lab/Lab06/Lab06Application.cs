@@ -48,8 +48,9 @@ namespace Aut.Lab.lab06
                     Console.WriteLine("Size of Queue = {0}",myque.Count);
                 }
                 else if(cmd.Equals("deque"))
-                {                   
-                    Console.WriteLine("Deque item : {0}",myque.Dequeue());
+                {   
+                    string data = myque.Dequeue();                
+                    Console.WriteLine("Deque item : {0}",data);
                 }
             }
         }
