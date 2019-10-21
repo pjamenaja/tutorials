@@ -6,6 +6,7 @@ using Aut.Lab.Lab04;
 using Aut.Lab.Lab05;
 using Aut.Lab.lab06;
 using Aut.Lab.Lab07;
+using Aut.Lab.Lab08;
 
 
 namespace Learning
@@ -13,9 +14,7 @@ namespace Learning
     class Program
     {
         static void Main(string[] args)
-        {            
-            
-            
+        {                                 
             string command = args[0];
             
             if(command.Equals("echo"))
@@ -64,8 +63,15 @@ namespace Learning
                 {
                   Lab07Application L7 = new Lab07Application();
                   L7.Run();  
+                }                
+            }
+            else if(command.Equals("lab08"))
+            {
+                if(args.Length<=1)
+                {
+                    Lab08Application L8 = new Lab08Application();
+                    L8.Run();
                 }
-                
             }            
         }
     }
