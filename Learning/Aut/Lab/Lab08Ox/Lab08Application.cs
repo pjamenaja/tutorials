@@ -34,14 +34,16 @@ namespace Aut.Lab.Lab08
                     mygame.Put(row,column,mark);                   
                     mygame.DisplayBoard();
                     bool check = mygame.IsGameOver();
+      
                     if(check == true)
                     {
+                        string winner = mygame.GetTheWinner();
+                        Console.WriteLine("The Winner is {0}",winner);
                         return;
                     }
                     
                     
-                   
-                    
+          
                 }
                 
             }

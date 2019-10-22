@@ -6,6 +6,7 @@ namespace Aut.Lab.Lab08
     public class Oxboard
     {       
         private string[,] board = new string[3,3];
+        private string winner = "";
 
         public Oxboard()
         {
@@ -26,6 +27,8 @@ namespace Aut.Lab.Lab08
                     board[r,c] = " ";
                 }
             }
+
+            winner = "";
         }
 
         private bool CheckGameOverByRow(int row, int len)    
@@ -48,15 +51,10 @@ namespace Aut.Lab.Lab08
                 prevMark = mark;
             }
 
-            if (prevMark.Equals("O"))
+            if (prevMark.Equals("O") || prevMark.Equals("X"))
             {
-                Console.WriteLine("O Win");
+                winner = prevMark;
                 return true;
-            }
-            else if(prevMark.Equals("X"))
-            {
-                Console.WriteLine("X win");
-                return(true);
             }
 
             return false;
@@ -78,24 +76,91 @@ namespace Aut.Lab.Lab08
                 }
 
                 prevMark = mark;
-
             }
-            if (prevMark.Equals("O"))
+
+            if (prevMark.Equals("O") || prevMark.Equals("X"))
             {
-                Console.WriteLine("O Win");
+                winner = prevMark;
                 return true;
             }
-            else if(prevMark.Equals("X"))
-            {
-                Console.WriteLine("X win");
-                return(true);
-            }
+            
             return false;
         }
 
-        private bool CheckGameoverByDiagonal(int Dia,int len)
+        private bool CheckGameoverByDiagonal()
         {
-           
+            string[] arr1 = new string[3] 
+            {
+                board[0,0], 
+                board[1,1], 
+                board[2,2] 
+            };
+
+            string[] arr2 = new string[3] 
+            {
+                board[0,2], 
+                board[1,1], 
+                board[2,0] 
+            };
+
+            bool check1 = CheckArrayIsOver(arr1);
+            bool check2 = CheckArrayIsOver(arr2);
+
+            return check1 || check2;                        
+        }
+
+        private bool CheckArrayIsOver(string[] arr)
+        {
+            string prevMark = "";
+
+            for(int i = 0; i<3; i++)
+            {
+                string mark = arr[i];
+                if(i == 0)
+                {
+                    prevMark = mark;
+                }
+
+                if (!prevMark.Equals(mark))
+                {
+                    return false;
+                }
+
+                prevMark = mark;
+            }
+
+            if (prevMark.Equals("O") || prevMark.Equals("X"))
+            {
+                winner = prevMark;
+                return true;
+            }
+            
+            return false;
+        }
+        public bool IsDraw()
+        {
+            string[] arr1 = new string[9] 
+            {
+                board[0,0], 
+                board[0,1], 
+                board[0,2], 
+                board[1,0], 
+                board[1,1], 
+                board[1,2], 
+                board[2,0], 
+                board[2,1], 
+                board[2,2]
+            };
+            for(int i =0;i<arr1.Length;i++)
+            {
+                if(arr1[i] != "")
+                {
+                    return true;
+                }
+            }
+            return false;
+            
+
         }
 
 
@@ -110,15 +175,15 @@ namespace Aut.Lab.Lab08
             bool isOver4 = CheckGameOverByColumn(1, 3);
             bool isOver5 = CheckGameOverByColumn(2, 3);
 
-            bool isOver6 = CheckGameoverByDiagonal(0, 3);
-            bool isOver7 = CheckGameoverByDiagonal(1, 3);
-            
-
-
-
-            
-            bool isOver = isOver0 || isOver1 || isOver2 || isOver3 || isOver4 || isOver5;
+            bool isOver6 = CheckGameoverByDiagonal();
+       
+            bool isOver = isOver0 || isOver1 || isOver2 || isOver3 || isOver4 || isOver5 || isOver6;
             return isOver;
+        }
+
+        public string GetTheWinner()
+        {
+            return winner; 
         }
 
 
