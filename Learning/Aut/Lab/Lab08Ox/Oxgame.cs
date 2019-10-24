@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 
+
 namespace Aut.Lab.Lab08
 {
     public class Oxboard
@@ -16,6 +17,7 @@ namespace Aut.Lab.Lab08
         public void Put(int row, int column, string mark)
         {
             board[row,column] = mark;
+                    
         }
 
         public void Clear()
@@ -56,6 +58,7 @@ namespace Aut.Lab.Lab08
                 winner = prevMark;
                 return true;
             }
+           
 
             return false;
         }
@@ -83,7 +86,7 @@ namespace Aut.Lab.Lab08
                 winner = prevMark;
                 return true;
             }
-            
+                       
             return false;
         }
 
@@ -134,33 +137,32 @@ namespace Aut.Lab.Lab08
                 winner = prevMark;
                 return true;
             }
-            
+             
             return false;
         }
-        public bool IsDraw()
+        public bool CheckDraw()
         {
-            string[] arr1 = new string[9] 
+            string[] arr1 = new string[9]
             {
-                board[0,0], 
-                board[0,1], 
-                board[0,2], 
-                board[1,0], 
-                board[1,1], 
-                board[1,2], 
-                board[2,0], 
-                board[2,1], 
+                board[0,0],
+                board[0,1],
+                board[0,2],
+                board[1,0],
+                board[1,1],
+                board[1,2],
+                board[2,0],
+                board[2,1],
                 board[2,2]
             };
-            for(int i =0;i<arr1.Length;i++)
-            {
-                if(arr1[i] != "")
-                {
-                    return true;
-                }
-            }
-            return false;
-            
 
+            for(int i = 0; i < 9; i++)
+            {
+                if(arr1[i] == " ")
+                {
+                    return false;
+                }            
+            }
+            return true;                    
         }
 
 
@@ -176,14 +178,14 @@ namespace Aut.Lab.Lab08
             bool isOver5 = CheckGameOverByColumn(2, 3);
 
             bool isOver6 = CheckGameoverByDiagonal();
-       
+      
             bool isOver = isOver0 || isOver1 || isOver2 || isOver3 || isOver4 || isOver5 || isOver6;
             return isOver;
         }
 
         public string GetTheWinner()
         {
-            return winner; 
+            return winner;
         }
 
 
