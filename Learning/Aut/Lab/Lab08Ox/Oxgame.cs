@@ -8,16 +8,24 @@ namespace Aut.Lab.Lab08
     {       
         private string[,] board = new string[3,3];
         private string winner = "";
-
+        
         public Oxboard()
         {
             Clear();
         }
 
         public void Put(int row, int column, string mark)
-        {
-            board[row,column] = mark;
-                    
+        {          
+            if(board[row,column] == " ")
+            {
+                board[row,column] = mark;
+            }
+            else
+            {
+                Console.WriteLine("Is already exist ");
+            }
+                      
+                                
         }
 
         public void Clear()
@@ -39,7 +47,6 @@ namespace Aut.Lab.Lab08
             for (int col = 0; col < 3; col++)
             {
                 string mark = board[row, col];
-
                 if(col == 0)
                 {
                     prevMark = mark;
@@ -142,30 +149,18 @@ namespace Aut.Lab.Lab08
         }
         public bool CheckDraw()
         {
-            string[] arr1 = new string[9]
+            for(int i = 0;i<3;i++)
             {
-                board[0,0],
-                board[0,1],
-                board[0,2],
-                board[1,0],
-                board[1,1],
-                board[1,2],
-                board[2,0],
-                board[2,1],
-                board[2,2]
-            };
-
-            for(int i = 0; i < 9; i++)
-            {
-                if(arr1[i] == " ")
+                for(int j = 0;j<3;j++)
                 {
-                    return false;
-                }            
+                    if(board[i,j] == " ")
+                    {
+                        return false;
+                    }
+                }
             }
-            return true;                    
+            return true;                   
         }
-
-
         public bool IsGameOver()
         {            
 
@@ -187,7 +182,6 @@ namespace Aut.Lab.Lab08
         {
             return winner;
         }
-
 
         public void DisplayBoard()
         {

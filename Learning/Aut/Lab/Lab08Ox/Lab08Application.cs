@@ -25,7 +25,7 @@ namespace Aut.Lab.Lab08
                     return;
                 }
                 else if(cmd.Equals("put"))
-                {
+                {                                  
                     string put = splitcmd[1];
                     string[]splitput = put.Split(',');
                     int row = Int32.Parse(splitput[0]);
@@ -35,7 +35,7 @@ namespace Aut.Lab.Lab08
                     mygame.DisplayBoard();
                     bool check = mygame.IsGameOver();
                     bool checkdraw = mygame.CheckDraw();
-                     
+                                       
                     if(check == true)
                     {
                         string winner = mygame.GetTheWinner();
@@ -44,11 +44,10 @@ namespace Aut.Lab.Lab08
                     }
                     else if(checkdraw == true)
                     {
-                        Console.WriteLine("Draw");
+                        Console.WriteLine("Draw !!");
                         return;
                     }
-                    
- 
+    
                 }
                 
             }
