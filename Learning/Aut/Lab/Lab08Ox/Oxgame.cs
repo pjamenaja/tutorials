@@ -8,24 +8,35 @@ namespace Aut.Lab.Lab08
     {       
         private string[,] board = new string[3,3];
         private string winner = "";
+        private string currentPlayer = "X";
         
+
         public Oxboard()
         {
             Clear();
         }
 
-        public void Put(int row, int column, string mark)
-        {          
-            if(board[row,column] == " ")
+        private String Flip(string mark)
+        {        
+            if(mark == "X")
             {
-                board[row,column] = mark;
+                return("O");
             }
             else
             {
-                Console.WriteLine("Is already exist ");
+                return("X");
             }
-                      
-                                
+            
+        }
+
+        public void Put(int row, int column)
+        {  
+            if (!board[row,column].Equals(" "))
+            {
+                Console.WriteLine("Is already exist");           
+            }
+            board[row,column] = currentPlayer; 
+            currentPlayer = Flip(currentPlayer);
         }
 
         public void Clear()

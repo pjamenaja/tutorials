@@ -7,6 +7,7 @@ using Aut.Lab.Lab05;
 using Aut.Lab.lab06;
 using Aut.Lab.Lab07;
 using Aut.Lab.Lab08;
+using Aut.Lab.lab09;
 
 
 namespace Learning
@@ -21,6 +22,11 @@ namespace Learning
             {
                 string command2 = args[1];
                 ArgumentLab echoCmd = new ArgumentLab(command2);
+            }
+            else if(command.Equals("lab00"))
+            {
+                name mylab = new name();
+                mylab.Run();
             }
             else if (command.Equals("sum"))
             {

@@ -30,8 +30,8 @@ namespace Aut.Lab.Lab08
                     string[]splitput = put.Split(',');
                     int row = Int32.Parse(splitput[0]);
                     int column = Int32.Parse(splitput[1]);
-                    string mark = splitput[2];
-                    mygame.Put(row,column,mark);                   
+                    //string mark = splitput[2];             
+                    mygame.Put(row,column);                                      
                     mygame.DisplayBoard();
                     bool check = mygame.IsGameOver();
                     bool checkdraw = mygame.CheckDraw();
