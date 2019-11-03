@@ -37,6 +37,32 @@ namespace Aut.Lab.Lab08
             }
             board[row,column] = currentPlayer; 
             currentPlayer = Flip(currentPlayer);
+            
+            
+        }
+
+        public void Rotate90Clockwise()
+        {
+            string[,] tmpBoard = new string[3,3];
+            for (int r=0; r<3; r++)
+            {
+                for (int c=0; c<3; c++)
+                {
+                    string mark = board[r, c];
+                    tmpBoard[c, 2-r] = mark;
+                }
+            }           
+            for (int r=0; r<3; r++)
+            {
+                for (int c=0; c<3; c++)
+                {
+                    string mark = tmpBoard[r, c];
+                    board[r,c] = mark;
+                }                
+
+            } 
+            
+        
         }
 
         public void Clear()
@@ -51,6 +77,7 @@ namespace Aut.Lab.Lab08
 
             winner = "";
         }
+        
 
         private bool CheckGameOverByRow(int row, int len)    
         {

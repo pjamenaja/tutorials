@@ -24,13 +24,18 @@ namespace Aut.Lab.Lab08
                 {
                     return;
                 }
+                else if(cmd.Equals("rotate"))
+                {                 
+                    mygame.Rotate90Clockwise();
+                    mygame.DisplayBoard();
+                    
+                }
                 else if(cmd.Equals("put"))
                 {                                  
                     string put = splitcmd[1];
                     string[]splitput = put.Split(',');
                     int row = Int32.Parse(splitput[0]);
-                    int column = Int32.Parse(splitput[1]);
-                    //string mark = splitput[2];             
+                    int column = Int32.Parse(splitput[1]);                                
                     mygame.Put(row,column);                                      
                     mygame.DisplayBoard();
                     bool check = mygame.IsGameOver();
