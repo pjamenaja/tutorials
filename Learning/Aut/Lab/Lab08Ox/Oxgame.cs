@@ -40,6 +40,28 @@ namespace Aut.Lab.Lab08
             
             
         }
+        public void Reverse90Clockwise()
+        {
+            string[,] tmpBoard = new string[3,3];
+            for(int r = 0; r < 3; r++)
+            {
+                for(int c = 0; c < 3;c ++)
+                {
+                    string mark = board[r,c];
+                    tmpBoard[2-c,r] = mark;
+                }
+            }
+            for (int r = 0; r < 3; r++)
+            {
+                for (int c = 0; c < 3; c++)
+                {
+                    string mark = tmpBoard[r, c];
+                    board[r,c] = mark;
+                }                
+
+            } 
+
+        }
 
         public void Rotate90Clockwise()
         {

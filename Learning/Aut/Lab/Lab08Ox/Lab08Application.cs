@@ -30,6 +30,11 @@ namespace Aut.Lab.Lab08
                     mygame.DisplayBoard();
                     
                 }
+                else if(cmd.Equals("reverse"))
+                {
+                    mygame.Reverse90Clockwise();
+                    mygame.DisplayBoard();
+                }
                 else if(cmd.Equals("put"))
                 {                                  
                     string put = splitcmd[1];
