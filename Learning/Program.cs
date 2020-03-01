@@ -78,6 +78,11 @@ namespace Learning
                     Lab08Application L8 = new Lab08Application();
                     L8.Run();
                 }
+            }
+            else if(command.Equals("lab09"))
+            {
+                lab09Application L9 = new lab09Application();
+                L9.Run();
             }            
         }
     }
