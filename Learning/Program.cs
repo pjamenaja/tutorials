@@ -9,6 +9,7 @@ using Aut.Lab.Lab07;
 using Aut.Lab.Lab08;
 using Aut.Lab.lab09;
 using Aut.Lab.lab10;
+using Aut.Lab.Lab11;
 
 
 namespace Learning
@@ -89,6 +90,11 @@ namespace Learning
             {
                 lab10Application L10 = new lab10Application();
                 L10.Run();
+            }
+            else if (command.Equals("lab11"))
+            {
+                lab11Application L11 = new lab11Application();
+                L11.Run();
             }            
         }
     }
