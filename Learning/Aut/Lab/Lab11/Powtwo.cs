@@ -15,6 +15,7 @@ namespace Aut.Lab.Lab11
          {
             mystack.Push(0);
          }
+         
 
       }
       public int Count()
