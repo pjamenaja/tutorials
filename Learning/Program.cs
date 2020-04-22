@@ -12,6 +12,7 @@ using Aut.Lab.lab10;
 using Aut.Lab.Lab11;
 using Aut.Lab.Lab12;
 using Aut.lab.lab13;
+using Aut.lab.lab14;
 
 namespace Learning
 {
@@ -106,7 +107,12 @@ namespace Learning
             {
                 lab13Application l13 = new lab13Application();
                 l13.Run();
-            }            
+            }
+            else if(command.Equals("lab14"))
+            {
+                lab14Application l14 = new lab14Application();
+                l14.Run();
+            }                        
         }
     }
 }
