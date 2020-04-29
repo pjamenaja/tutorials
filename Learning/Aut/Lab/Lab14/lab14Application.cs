@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 namespace Aut.lab.lab14
 {
     public class lab14Application
